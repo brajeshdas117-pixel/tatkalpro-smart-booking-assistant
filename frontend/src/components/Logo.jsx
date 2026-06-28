@@ -1,7 +1,7 @@
 ﻿function Logo() {
   return (
     <div className="text-center mb-8">
-      <div className="text-6xl">🚆</div>
+      <div className="text-6xl mb-4">🚆</div>
 
       <h1 className="text-4xl font-bold text-indigo-600 mt-2">
         TatkalPro
