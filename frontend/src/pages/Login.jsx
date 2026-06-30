@@ -1,8 +1,12 @@
 import Logo from "../components/Logo"
 import InputField from "../components/InputField"
 import Button from "../components/Button"
+import { useState } from "react";
 
 function Login() {
+
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div className="min-h-screen bg-blue-50 flex items-center justify-center px-4">
       <div className="bg-white w-full max-w-md rounded-3xl shadow-2xl p-8">
@@ -19,11 +23,24 @@ function Login() {
 
           <InputField
             label="Password"
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Enter your password"
+            rightElement={
+              <button
+                type = "button"
+                onClick = {() => setShowPassword(!showPassword)}
+                className = "text-gray-500 hover:text-indigo-600"
+              >
+                {showPassword ? "🙈" : "👁️"}
+              </button>
+            }
           />
 
-          <Button />
+
+          <Button 
+            text="Login"
+            type="submit"
+          />
 
         </form>
 
